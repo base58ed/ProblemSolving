@@ -1,0 +1,10 @@
+
+
+2) Why Kotlin or what other the pain-points with Java the language?
+
+  .1) NullPointerException
+  .2) Verbose and boilerplate code
+  .3) Mutable references and everything non-final by default
+  .4) Utils everywhere
+  .5) API design short-comings (You need those GoF design patterns to fill language weaknesses)
+  .6) ... Rest is left for the reader after he/she begins enjoying Kotlin
