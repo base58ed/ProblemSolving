@@ -37,3 +37,36 @@ fun isPermutation1(s: String, t: String): Boolean {
 	}
 	return true
 }
+
+
+// 1.3 URLify
+
+fun urlify(str: CharArray, trueLen: Int): CharArray {
+	var spaces = 0
+	for (c in 0..trueLen-1) {
+		if (str[c] == ' ') spaces += 1
+	}
+
+	var offsetIdx = (trueLen + spaces * 2) - 1
+
+	for (c in (trueLen-1) downTo 0) {
+		if (str[c] == ' ') {
+			str[offsetIdx] = '0'
+			str[offsetIdx-1] = '2'
+			str[offsetIdx-2] = '%'
+			offsetIdx -= 3
+		} else {
+			str[offsetIdx] = str[c]
+			offsetIdx -= 1
+		}
+	}
+
+	return str
+}
+
+fun main(args: Array<String>) {
+	val str = charArrayOf('t', 'h', 'a', 't', ' ', 't', 'h', 'e', ' ', 'q', 'u', 'i', 'c', 'k', ' ', ' ', ' ', ' ', ' ', ' ', ' ')
+	println(urlify(str, 14))
+}
+
+
