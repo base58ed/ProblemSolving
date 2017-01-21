@@ -21,7 +21,7 @@ fun allUnique0(str: String): Boolean {
 // O(n lg n) solution
 fun isPermutation0(s: String, t: String): Boolean {
 	if (s.count() != t.count()) return false
- 	return java.util.Arrays.equals(s.toCharArray().sortedArray(), t.toCharArray().sortedArray())
+	return java.util.Arrays.equals(s.toCharArray().sortedArray(), t.toCharArray().sortedArray())
 }
 
 // O(n) solution. takes O(n) extra space
@@ -64,9 +64,55 @@ fun urlify(str: CharArray, trueLen: Int): CharArray {
 	return str
 }
 
-fun main(args: Array<String>) {
+fun mainURLify(args: Array<String>) {
 	val str = charArrayOf('t', 'h', 'a', 't', ' ', 't', 'h', 'e', ' ', 'q', 'u', 'i', 'c', 'k', ' ', ' ', ' ', ' ', ' ', ' ', ' ')
 	println(urlify(str, 14))
 }
+
+
+fun permutaionIsPalindrome(str: String): Boolean {
+	val alphabetsIdx = IntArray(26)
+	for (c in str) {
+		if (c != ' ') alphabetsIdx[c.toLowerCase().toInt() - 97] += 1
+	}
+
+	var oddCount = 0
+	for (i in alphabetsIdx) {
+		if (i % 2 != 0) {
+			oddCount += 1
+			if (oddCount > 1) return false
+		}
+	}
+	return true
+}
+
+fun main(args: Array<String>) {
+	println(permutaionIsPalindrome("tact coazz"))
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
