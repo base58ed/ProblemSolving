@@ -2,10 +2,11 @@ group 'com.nabeel'
 version '0.1'
 
 buildscript {
-    ext.kotlin_version = '1.1-M04'
+    ext.kotlin_version = '1.1.0-beta-18'
 
     repositories {
         maven { url 'http://dl.bintray.com/kotlin/kotlin-eap-1.1' }
+        maven { url 'https://dl.bintray.com/kotlin/kotlinx.coroutines/' }
         mavenCentral()
     }
     dependencies {
@@ -25,5 +26,8 @@ repositories {
 
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    compile "org.jetbrains.kotlinx:kotlinx-coroutines-generate:0.3-beta"
+    compile "org.jetbrains.kotlinx:kotlinx-coroutines-async:0.3-beta"
+    compile "org.jetbrains.kotlinx:kotlinx-coroutines-rx:0.3-beta"
     testCompile group: 'junit', name: 'junit', version: '4.11'
 }
